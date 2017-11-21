@@ -5,13 +5,18 @@
 set -e
 
 echo Fiji Wiki
-curl http://fiji.sc/Fiji | grep "Fiji Is Just ImageJ"
+curl http://fiji.sc | grep "Fiji is just ImageJ"
 
 echo Fiji Wiki legacy
-curl http://fiji.sc/wiki/Fiji | grep "Fiji Is Just ImageJ"
+curl http://fiji.sc/wiki/Fiji | grep "301"
+curl http://fiji.sc/wiki/Fiji | grep "\"http://fiji\.sc/Fiji\""
+
+echo Fiji Wiki legacy
+curl http://fiji.sc/Fiji | grep "301"
+curl http://fiji.sc/Fiji | grep "\"http://fiji\.sc/\""
 
 echo Fiji Wiki legacy \#2
-curl -L http://fiji.sc/mediawiki/phase3/Fiji | grep "Fiji Is Just ImageJ"
+curl -L http://fiji.sc/mediawiki/phase3/Fiji | grep "Fiji is just ImageJ"
 
 echo Fiji Wiki page starting with a digit
 curl -L http://fiji.sc/2013-02-25_-_TrackMate_v2.0.0_released | grep "We just released"

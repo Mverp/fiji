@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>sc.fiji</groupId>
 		<artifactId>pom-fiji</artifactId>
-		<version>21.1.0</version>
+		<version>26.1.1</version>
 		<relativePath />
 	</parent>
 
@@ -34,7 +34,6 @@
 	</ciManagement>
 
 	<properties>
-		<scijava.jvm.version>1.8</scijava.jvm.version>
 		<main-class>net.imagej.Main</main-class>
 	</properties>
 
@@ -88,6 +87,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- Op-Finder is currently GPL -->
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>op-finder</artifactId>
+      <scope>runtime</scope>
+		</dependency>
+
 		<!-- Standard Fiji projects - https://github.com/fiji -->
 		<dependency>
 			<groupId>sc.fiji</groupId>
@@ -107,11 +113,6 @@
 		<dependency>
 			<groupId>sc.fiji</groupId>
 			<artifactId>AnalyzeSkeleton_</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>sc.fiji</groupId>
-			<artifactId>Analyze_Reader_Writer</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -646,12 +647,6 @@
 			<groupId>sc.fiji</groupId>
 			<artifactId>trakem2_tps</artifactId>
 			<scope>runtime</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>net.sf.opencsv</groupId>
-					<artifactId>opencsv</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<!-- BigDataViewer projects - https://github.com/bigdataviewer -->
